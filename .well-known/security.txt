@@ -1,0 +1,5 @@
+Contact: mailto:dev@rafahim.com
+Expires: 2027-10-09T00:00:00.000Z
+Preferred-Languages: en, bn
+Canonical: https://rafahim.com/.well-known/security.txt
+Policy: https://rafahim.com/bangla-ocr/

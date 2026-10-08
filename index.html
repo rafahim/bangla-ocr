@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f5f7fb">
+<title>Bangla OCR — Free Bengali Image to Text Converter | RA Fahim</title>
+<meta name="description" content="Bangla OCR by RA Fahim — extract Bengali and English text from images privately in your browser. Free, fast, client-side image to text converter with no uploads.">
+<meta name="keywords" content="bangla ocr, bengali image to text, bangla text extractor, ocr bengali, free ocr">
+<meta name="author" content="RA Fahim">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://rafahim.com/bangla-ocr/">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="manifest" href="manifest.json">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://tessdata.projectnaptha.com" crossorigin>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bangla OCR by RA Fahim">
+<meta property="og:title" content="Bangla OCR — Free Bengali Image to Text Converter | RA Fahim">
+<meta property="og:description" content="Extract Bengali and English text from images privately in your browser. Free, client-side OCR by RA Fahim.">
+<meta property="og:url" content="https://rafahim.com/bangla-ocr/">
+<meta property="og:image" content="https://rafahim.com/bangla-ocr/og-image.svg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Bangla OCR by RA Fahim — Bengali image to text converter">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bangla OCR — Free Bengali Image to Text Converter | RA Fahim">
+<meta name="twitter:description" content="Extract Bengali and English text from images privately in your browser. No uploads.">
+<meta name="twitter:image" content="https://rafahim.com/bangla-ocr/og-image.svg">
+<meta name="twitter:creator" content="@rafahimn">
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Bangla OCR by RA Fahim",
+    "url": "https://rafahim.com/bangla-ocr/",
+    "description": "A free client-side Bengali and English image-to-text converter that processes images in the browser.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "JavaScript and WebAssembly enabled",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "author": { "@type": "Person", "name": "RA Fahim", "url": "https://rafahim.com" }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "RA Fahim",
+    "url": "https://rafahim.com",
+    "jobTitle": "Web Developer & Creator",
+    "address": { "@type": "PostalAddress", "addressLocality": "Dhaka", "addressCountry": "BD" },
+    "sameAs": [
+      "https://rafahim.com",
+      "https://github.com/rafahim",
+      "https://twitter.com/rafahimn",
+      "https://linkedin.com/in/rafahimn"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Bangla OCR",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Windows, macOS, Linux, Android, iOS",
+    "softwareVersion": "1.0.0",
+    "author": { "@type": "Person", "name": "RA Fahim" },
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rafahim.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Bangla OCR", "item": "https://rafahim.com/bangla-ocr/" }
+    ]
+  }
+]
+</script>
+<link rel="stylesheet" href="style.css">
+<script defer src="https://cdn.jsdelivr.net/npm/tesseract.js@5.1.1/dist/tesseract.min.js"></script>
+<script defer src="https://unpkg.com/docx@8.5.0/build/index.umd.js"></script>
+<script defer src="script.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">মূল কনটেন্টে যান</a>
+<header class="topbar">
+  <a class="brand" href="./" aria-label="Bangla OCR home">
+    <span class="brand-mark" aria-hidden="true">ব</span>
+    <span class="brand-copy"><strong>Bangla OCR</strong><small>ছবি থেকে বাংলা টেক্সট</small></span>
+  </a>
+  <div class="top-actions">
+    <span class="privacy-pill"><span class="privacy-dot" aria-hidden="true"></span> ১০০% আপনার ডিভাইসে</span>
+    <button id="theme-toggle" class="icon-button" type="button" aria-label="ডার্ক মোড চালু বা বন্ধ করুন" title="থিম পরিবর্তন করুন"><span id="theme-icon" aria-hidden="true">☾</span></button>
+  </div>
+</header>
+<main id="main-content" class="page-shell">
+  <section class="hero" aria-labelledby="page-title">
+    <div class="hero-copy">
+      <span class="eyebrow"><span aria-hidden="true">✦</span> ফ্রি · ব্যক্তিগত · সহজ</span>
+      <h1 id="page-title">ছবি থেকে বাংলা টেক্সট বের করুন</h1>
+      <p>ছবি দিন, OCR চালান, তারপর লেখা কপি বা ডাউনলোড করুন। আপনার ছবি কোনো সার্ভারে আপলোড হয় না—সবকিছু আপনার ব্রাউজারেই প্রসেস হয়।</p>
+      <div class="hero-tags"><span>বাংলা + English</span><span>কোনো আপলোড নয়</span><span>ব্যাচ প্রসেসিং</span></div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="art-glow"></div>
+      <div class="art-card art-back"><span>অ আ ই ঈ</span><span>01 02 03</span><span>বাংলা OCR</span></div>
+      <div class="art-card art-front"><span class="scan-line"></span><strong>বাংলা</strong><small>Text detected</small><div class="art-bars"><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+      <span class="art-spark spark-one">✦</span><span class="art-spark spark-two">✧</span>
+    </div>
+  </section>
+  <div class="privacy-note" role="note"><span class="note-icon" aria-hidden="true">♧</span><span><strong>আপনার ফাইল আপনার কাছেই থাকে।</strong> OCR-এর জন্য Tesseract.js ও ভাষার ডেটা প্রথমবার CDN থেকে লোড হয়; ছবির ফাইল আমাদের কাছে পাঠানো হয় না।</span></div>
+  <section class="workspace" aria-label="OCR workspace">
+    <div class="left-column">
+      <section class="panel upload-panel" aria-labelledby="upload-heading">
+        <div class="panel-heading"><div><span class="step-label">ধাপ ০১</span><h2 id="upload-heading">ছবি যোগ করুন</h2></div><span class="heading-icon" aria-hidden="true">↥</span></div>
+        <div id="drop-zone" class="drop-zone" tabindex="0" role="button" aria-label="ছবি নির্বাচন করুন অথবা এখানে টেনে আনুন">
+          <div class="upload-icon" aria-hidden="true"><svg viewBox="0 0 48 48" focusable="false"><rect x="5" y="7" width="38" height="34" rx="8"></rect><circle cx="17" cy="18" r="3.5"></circle><path d="m8 35 10-10 7 7 5-5 10 9"></path><path d="M24 5v18m-6-6 6-6 6 6"></path></svg></div>
+          <strong>ছবি এখানে টেনে আনুন</strong><span>অথবা আপনার ডিভাইস থেকে নির্বাচন করুন</span>
+          <div class="upload-actions"><button id="choose-file" class="button button-primary" type="button">ছবি নির্বাচন</button><button id="camera-file-button" class="button button-secondary" type="button">ক্যামেরা খুলুন</button></div>
+          <small>PNG, JPG, JPEG, WEBP, BMP · প্রতি ছবি সর্বোচ্চ ২০ MB</small>
+          <input id="file-input" class="visually-hidden" type="file" accept="image/*" multiple aria-label="কম্পিউটার থেকে ছবি নির্বাচন করুন">
+          <input id="camera-input" class="visually-hidden" type="file" accept="image/*" capture="environment" aria-label="ক্যামেরা দিয়ে ছবি তুলুন">
+        </div>
+        <p id="upload-feedback" class="feedback" role="status" aria-live="polite"></p>
+      </section>
+      <section class="panel preview-panel" aria-labelledby="preview-heading">
+        <div class="panel-heading"><div><span class="step-label">ধাপ ০২</span><h2 id="preview-heading">ছবির প্রিভিউ</h2></div><span id="image-dimensions" class="subtle-label">কোনো ছবি নেই</span></div>
+        <div id="preview-empty" class="preview-empty"><span class="empty-image" aria-hidden="true">▧</span><strong>আপনার ছবি এখানে দেখা যাবে</strong><span>উপরের বক্সে ছবি যোগ করুন</span></div>
+        <div id="preview-wrap" class="preview-wrap" hidden><img id="image-preview" alt="OCR-এর জন্য নির্বাচিত ছবির প্রিভিউ"><span id="preview-filename" class="preview-caption"></span></div>
+        <div class="preprocess-controls">
+          <div class="subsection-title"><span>ছবি পরিষ্কার করুন</span><small>ঐচ্ছিক · ফলাফল আরও ভালো হতে পারে</small></div>
+          <div class="option-grid">
+            <label class="check-option"><input id="opt-grayscale" type="checkbox"><span class="fake-check" aria-hidden="true"></span><span>Grayscale</span></label>
+            <label class="check-option"><input id="opt-binarize" type="checkbox"><span class="fake-check" aria-hidden="true"></span><span>Binarize (Otsu)</span></label>
+            <label class="check-option"><input id="opt-deskew" type="checkbox"><span class="fake-check" aria-hidden="true"></span><span>Deskew</span></label>
+            <label class="check-option"><input id="opt-invert" type="checkbox"><span class="fake-check" aria-hidden="true"></span><span>রং উল্টান</span></label>
+          </div>
+          <label class="range-label" for="opt-contrast"><span>Contrast</span><output id="contrast-value" for="opt-contrast">৫০%</output></label>
+          <input id="opt-contrast" class="range-control" type="range" min="0" max="100" value="50" aria-label="কনট্রাস্ট পরিবর্তন করুন">
+          <p class="muted-hint">মলিন বা কম কনট্রাস্টের ছবিতে Grayscale ও Contrast চেষ্টা করুন। কাত হওয়া ছবিতে Deskew ব্যবহার করুন।</p>
+        </div>
+      </section>
+      <section class="panel queue-panel" aria-labelledby="queue-heading">
+        <div class="panel-heading"><div><span class="step-label">ব্যাচ টুল</span><h2 id="queue-heading">ছবির তালিকা <span id="queue-count" class="count-badge">০</span></h2></div><button id="clear-queue" class="text-button" type="button">সব মুছুন</button></div>
+        <div id="queue-empty" class="queue-empty">একাধিক ছবি যোগ করলে এখানে তালিকা দেখা যাবে।</div>
+        <ul id="queue-list" class="queue-list" aria-label="প্রসেস করার ছবির তালিকা"></ul>
+      </section>
+    </div>
+    <div class="right-column">
+      <section class="panel settings-panel" aria-labelledby="settings-heading">
+        <div class="panel-heading"><div><span class="step-label">ধাপ ০৩</span><h2 id="settings-heading">OCR সেটিংস</h2></div><span class="heading-icon" aria-hidden="true">⚙</span></div>
+        <label class="field-label" for="language-select">টেক্সটের ভাষা</label>
+        <select id="language-select" class="select-control" aria-label="OCR ভাষা নির্বাচন করুন"><option value="ben">বাংলা (Bengali)</option><option value="eng">English</option><option value="ben+eng" selected>বাংলা + English</option></select>
+        <div class="engine-note"><span class="engine-dot" aria-hidden="true"></span><span>OCR ইঞ্জিন: Tesseract.js · ভাষার ডেটা প্রথমবার লোড হতে সময় লাগতে পারে</span></div>
+        <button id="recognize-current" class="button button-primary button-wide" type="button" disabled><span aria-hidden="true">✧</span> নির্বাচিত ছবির OCR চালান</button>
+        <button id="recognize-all" class="button button-secondary button-wide" type="button" disabled>সব ছবির OCR চালান <span id="batch-button-count">(০)</span></button>
+        <div id="progress-card" class="progress-card" hidden>
+          <div class="progress-top"><strong id="progress-status">প্রস্তুত হচ্ছে…</strong><span id="progress-percent">০%</span></div>
+          <div class="progress-track" role="progressbar" aria-label="OCR অগ্রগতি" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress-bar"><span id="progress-fill"></span></div>
+          <p id="progress-detail" aria-live="polite">প্রসেসিং শুরু হয়নি</p>
+        </div>
+        <p id="ocr-feedback" class="feedback" role="status" aria-live="polite"></p>
+      </section>
+      <section class="panel output-panel" aria-labelledby="output-heading">
+        <div class="panel-heading output-heading"><div><span class="step-label">ধাপ ০৪</span><h2 id="output-heading">আপনার টেক্সট</h2></div><span id="output-status" class="status-chip">প্রস্তুত</span></div>
+        <div class="editor-wrap"><label class="visually-hidden" for="output-text">OCR ফলাফল সম্পাদনা করুন</label><textarea id="output-text" spellcheck="false" placeholder="OCR চালালে শনাক্ত হওয়া বাংলা বা ইংরেজি লেখা এখানে দেখাবে। চাইলে লেখা সরাসরি সম্পাদনা করতে পারবেন…" aria-label="সম্পাদনাযোগ্য OCR ফলাফল"></textarea><div class="editor-foot"><span id="char-count">০ অক্ষর</span><span id="word-count">০ শব্দ</span><span id="line-count">০ লাইন</span></div></div>
+        <div class="tool-buttons"><button id="fix-text" class="button button-soft" type="button" disabled>✦ OCR ভুল ঠিক করুন</button><button id="copy-text" class="button button-secondary" type="button" disabled>▣ কপি</button><button id="download-txt" class="button button-secondary" type="button" disabled>.TXT</button><button id="download-docx" class="button button-primary" type="button" disabled>.DOCX</button></div>
+        <p id="output-feedback" class="feedback" role="status" aria-live="polite"></p>
+      </section>
+      <section class="panel history-panel" aria-labelledby="history-heading">
+        <div class="panel-heading"><div><span class="step-label">এই ডিভাইসে</span><h2 id="history-heading">সাম্প্রতিক ইতিহাস</h2></div><button id="clear-history" class="text-button" type="button">ইতিহাস মুছুন</button></div>
+        <p class="history-note">শেষ ২০টি ফলাফল শুধু এই ব্রাউজারের Local Storage-এ রাখা হয়। ছবির ফাইল রাখা হয় না।</p>
+        <div id="history-empty" class="history-empty">এখনও কোনো OCR ফলাফল সংরক্ষিত হয়নি।</div>
+        <ul id="history-list" class="history-list" aria-label="সাম্প্রতিক OCR ফলাফল"></ul>
+      </section>
+    </div>
+  </section>
+  <section class="how-it-works" aria-labelledby="privacy-heading"><div class="privacy-symbol" aria-hidden="true">⌁</div><div><h2 id="privacy-heading">গোপনীয়তা প্রথমে</h2><p>এই অ্যাপ আপনার নির্বাচিত ছবি কোথাও আপলোড করে না। OCR-এর কাজ আপনার ব্রাউজারে হয়। Tesseract.js ও বাংলা/ইংরেজি traineddata CDN থেকে ডাউনলোড হতে পারে; ফলাফল ইতিহাসে রাখলে তা এই ডিভাইসের Local Storage-এ থাকে।</p></div></section>
+</main>
+<footer class="site-footer"><div class="footer-inner"><span>Built with ❤️ by <a href="https://rafahim.com" target="_blank" rel="noopener noreferrer">RA Fahim</a> · <a href="https://rafahim.com" target="_blank" rel="noopener noreferrer">rafahim.com</a> · © 2026 RA Fahim</span><span class="footer-location">Made in Bangladesh <span aria-hidden="true">🇧🇩</span></span></div><div class="footer-links"><a href="https://github.com/rafahim" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://twitter.com/rafahimn" target="_blank" rel="noopener noreferrer">Twitter</a><a href="https://linkedin.com/in/rafahimn" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="mailto:dev@rafahim.com">Contact</a></div></footer>
+</body>
+</html>

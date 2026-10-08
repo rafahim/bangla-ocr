@@ -1,0 +1,18 @@
+/* TEAM */
+Name: RA Fahim
+Role: Web Developer & Creator
+Focus: Full-stack development
+Experience: 1 year
+Location: Dhaka, Bangladesh
+Website: https://rafahim.com
+GitHub: https://github.com/rafahim
+Email: dev@rafahim.com
+Twitter: https://twitter.com/rafahimn
+LinkedIn: https://linkedin.com/in/rafahimn
+
+/* SITE */
+Name: Bangla OCR
+Language: Bengali, English
+Privacy: Client-side image processing; no image uploads
+Last update: 2026-10-09
+Made in Bangladesh

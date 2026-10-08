@@ -1,0 +1,21 @@
+{
+  "id": "/bangla-ocr/",
+  "name": "Bangla OCR by RA Fahim",
+  "short_name": "Bangla OCR",
+  "description": "Free Bengali and English image-to-text converter that works in your browser.",
+  "lang": "bn",
+  "start_url": "/bangla-ocr/",
+  "scope": "/bangla-ocr/",
+  "display": "standalone",
+  "background_color": "#f5f7fb",
+  "theme_color": "#f5f7fb",
+  "categories": ["utilities", "productivity"],
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
