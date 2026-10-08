@@ -2,8 +2,6 @@
 
 Free, private Bengali image-to-text conversion — সরাসরি আপনার ব্রাউজারে, কোনো ছবি আপলোড ছাড়াই।
 
-**Live Demo:** https://rafahim.com/bangla-ocr/
-
 ## Author
 
 **RA Fahim** — Web Developer & Creator, Full-stack, 1 year experience; Dhaka, Bangladesh.
